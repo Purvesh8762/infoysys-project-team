@@ -1,4 +1,4 @@
-package com.legalaid.backend.entity.Role;
+package com.legalaid.backend.entity;
 
 import jakarta.persistence.*;
 
