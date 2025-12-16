@@ -1,1 +1,0 @@
-# infoysys-project-team
