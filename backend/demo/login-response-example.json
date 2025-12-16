@@ -1,0 +1,22 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ0lUSVpFTiIsInVzZXJJZCI6MiwidXNlcm5hbWUiOiJHYW5lc2ggTWFjY2hpbmRyYSBCb2Rha2hlIiwic3ViIjoiYm9kYWtoZWdhbmVzaDI0QGdtYWlsLmNvbSIsImlhdCI6MTc2NTU2ODc1OSwiZXhwIjoxNzY1NjU1MTU5fQ._5lAhBDuV4vD4UOiOUudq1nQBwpV6oHeb6fU3BYK0_Q",
+  "email": "bodakheganesh24@gmail.com",
+  "username": "Ganesh Macchindra Bodakhe",
+  "role": "CITIZEN",
+  "userId": 2,
+  "message": "Login successful",
+  "userData": {
+    "id": 2,
+    "fullName": "Ganesh Macchindra Bodakhe",
+    "aadharNum": "123456789012",
+    "email": "bodakheganesh24@gmail.com",
+    "mobileNum": "9876543210",
+    "dateOfBirth": "1990-01-15",
+    "state": "Maharashtra",
+    "district": "Pune",
+    "city": "Pune",
+    "address": "123 Main Street, Pune",
+    "profilePhotoUrl": "https://res.cloudinary.com/dea8ytcdu/image/upload/v1234567890/citizens/profile-photos/profile-photo.jpg"
+  }
+}
+

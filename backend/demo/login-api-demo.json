@@ -1,0 +1,256 @@
+{
+  "endpoint": "POST http://localhost:8080/api/auth/login",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "examples": {
+    "citizen_login": {
+      "description": "Login as Citizen",
+      "request": {
+        "username": "sachinborse7744@gmail.com",
+        "password": "your_password_here",
+        "role": "CITIZEN"
+      },
+      "expected_response": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "email": "sachinborse7744@gmail.com",
+        "username": "Sachin Borse",
+        "role": "CITIZEN",
+        "userId": 1,
+        "message": "Login successful",
+        "userData": {
+          "id": 1,
+          "fullName": "Sachin Borse",
+          "aadharNum": "123456789012",
+          "email": "sachinborse7744@gmail.com",
+          "mobileNum": "9876543210",
+          "dateOfBirth": "1990-01-15",
+          "state": "Maharashtra",
+          "district": "Pune",
+          "city": "Pune",
+          "address": "123 Main Street",
+          "profilePhotoUrl": "https://res.cloudinary.com/.../profile-photo.jpg"
+        }
+      }
+    },
+    "lawyer_login": {
+      "description": "Login as Lawyer",
+      "request": {
+        "username": "lawyer@example.com",
+        "password": "lawyer_password",
+        "role": "LAWYER"
+      },
+      "expected_response": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "email": "lawyer@example.com",
+        "username": "Adv. Ramesh Sharma",
+        "role": "LAWYER",
+        "userId": 1,
+        "message": "Login successful",
+        "userData": {
+          "id": 1,
+          "fullName": "Adv. Ramesh Sharma",
+          "email": "lawyer@example.com",
+          "mobileNum": "9876543210",
+          "aadharNum": "123456789012",
+          "aadharProofUrl": "https://cloudinary.com/...",
+          "aadharProofFilename": "aadhar.pdf",
+          "barCouncilId": "BAR123456",
+          "barState": "Maharashtra",
+          "specialization": "Criminal Law",
+          "barCertificateUrl": "https://cloudinary.com/...",
+          "barCertificateFilename": "bar_cert.pdf",
+          "experienceYears": 5,
+          "address": "123 Lawyer Street",
+          "district": "Pune",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "latitude": 18.5204,
+          "longitude": 73.8567,
+          "createdAt": "2024-01-15T10:30:00"
+        }
+      }
+    },
+    "ngo_login": {
+      "description": "Login as NGO",
+      "request": {
+        "username": "ngo@example.com",
+        "password": "ngo_password",
+        "role": "NGO"
+      },
+      "expected_response": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "email": "ngo@example.com",
+        "username": "NGO Name",
+        "role": "NGO",
+        "userId": 1,
+        "message": "Login successful",
+        "userData": {
+          "id": 1,
+          "ngoName": "NGO Name",
+          "ngoType": "Non-Profit",
+          "registrationNumber": "NGO123456",
+          "registrationCertificateUrl": "https://cloudinary.com/...",
+          "registrationCertificateFilename": "reg_cert.pdf",
+          "contact": "9876543210",
+          "email": "ngo@example.com",
+          "address": "123 NGO Street",
+          "state": "Maharashtra",
+          "district": "Pune",
+          "city": "Pune",
+          "pincode": "411001",
+          "latitude": 18.5204,
+          "longitude": 73.8567,
+          "createdAt": "2024-01-15T10:30:00"
+        }
+      }
+    },
+    "admin_login": {
+      "description": "Login as Admin",
+      "request": {
+        "username": "admin@advocare.com",
+        "password": "admin123",
+        "role": "ADMIN"
+      },
+      "expected_response": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "email": "admin@advocare.com",
+        "username": "Admin",
+        "role": "ADMIN",
+        "userId": null,
+        "message": "Login successful"
+      }
+    },
+    "invalid_credentials": {
+      "description": "Invalid login attempt",
+      "request": {
+        "username": "wrong@email.com",
+        "password": "wrongpassword",
+        "role": "CITIZEN"
+      },
+      "expected_response": {
+        "status": 401,
+        "message": "Invalid credentials"
+      }
+    },
+    "missing_fields": {
+      "description": "Missing required fields",
+      "request": {
+        "username": "",
+        "password": "",
+        "role": ""
+      },
+      "expected_response": {
+        "status": 400,
+        "message": "Email, password, and role are required"
+      }
+    }
+  },
+  "curl_examples": {
+    "citizen_login_curl": "curl -X POST http://localhost:8080/api/auth/login -H \"Content-Type: application/json\" -d '{\"username\":\"sachinborse7744@gmail.com\",\"password\":\"your_password\",\"role\":\"CITIZEN\"}'",
+    "lawyer_login_curl": "curl -X POST http://localhost:8080/api/auth/login -H \"Content-Type: application/json\" -d '{\"username\":\"lawyer@example.com\",\"password\":\"lawyer_password\",\"role\":\"LAWYER\"}'",
+    "ngo_login_curl": "curl -X POST http://localhost:8080/api/auth/login -H \"Content-Type: application/json\" -d '{\"username\":\"ngo@example.com\",\"password\":\"ngo_password\",\"role\":\"NGO\"}'",
+    "admin_login_curl": "curl -X POST http://localhost:8080/api/auth/login -H \"Content-Type: application/json\" -d '{\"username\":\"admin@advocare.com\",\"password\":\"admin123\",\"role\":\"ADMIN\"}'"
+  },
+  "postman_collection": {
+    "info": {
+      "name": "AdvoCare Login API",
+      "description": "API endpoints for user authentication"
+    },
+    "item": [
+      {
+        "name": "Login - Citizen",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"sachinborse7744@gmail.com\",\n  \"password\": \"your_password\",\n  \"role\": \"CITIZEN\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "auth", "login"]
+          }
+        }
+      },
+      {
+        "name": "Login - Lawyer",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"lawyer@example.com\",\n  \"password\": \"lawyer_password\",\n  \"role\": \"LAWYER\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "auth", "login"]
+          }
+        }
+      },
+      {
+        "name": "Login - NGO",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"ngo@example.com\",\n  \"password\": \"ngo_password\",\n  \"role\": \"NGO\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "auth", "login"]
+          }
+        }
+      },
+      {
+        "name": "Login - Admin",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"admin@advocare.com\",\n  \"password\": \"admin123\",\n  \"role\": \"ADMIN\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "auth", "login"]
+          }
+        }
+      }
+    ]
+  }
+}
+

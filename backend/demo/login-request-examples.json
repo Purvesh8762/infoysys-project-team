@@ -1,0 +1,23 @@
+{
+  "citizen_login": {
+    "username": "sachinborse7744@gmail.com",
+    "password": "your_password_here",
+    "role": "CITIZEN"
+  },
+  "lawyer_login": {
+    "username": "lawyer@example.com",
+    "password": "lawyer_password",
+    "role": "LAWYER"
+  },
+  "ngo_login": {
+    "username": "ngo@example.com",
+    "password": "ngo_password",
+    "role": "NGO"
+  },
+  "admin_login": {
+    "username": "admin@advocare.com",
+    "password": "admin123",
+    "role": "ADMIN"
+  }
+}
+
